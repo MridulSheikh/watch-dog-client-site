@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+ background:linear-gradient(329deg, rgba(255, 255, 255, 0.864) 0%, rgba(255, 255, 255, 0.89) 33%),url('./utilities/img/close-up-portrait-disappointed-curly-girl-looking-away-wearing-trendy-attire-young-woman-with-panicking-face-expression-holding-big-alarm-clock-decorated-wall.jpg');
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
 }
 
 .App-logo {
