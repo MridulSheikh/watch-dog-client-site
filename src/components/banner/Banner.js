@@ -26,7 +26,7 @@ const Banner = () => {
     />
     <Carousel.Caption>
       <h3>PENAROSA WATCHES</h3>
-      <p>Brands like Penarosa do not have a long heritage or vast networks of celebrities to use. However, Penarosa watches win when it comes to defining and targeting their market. The homepage alone lets you know this is a brand for women even without saying it explicitly.</p>
+      <p>Brands like Penarosa do not have a long heritage or vast networks of celebrities to use. However, Penarosa watches win when it comes to defining and targeting their market.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>

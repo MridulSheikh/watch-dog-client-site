@@ -1,0 +1,9 @@
+.exploreBanner{
+    background: url("./../../utilities//img/young-man-pointing-his-watch-wrist-blue-shirt-hat-looking-careful-front-view.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
