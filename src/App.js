@@ -13,6 +13,7 @@ import PrivateRoute from './components/Private route/PrivateRoute';
 import Shipping from './components/procced to shipping/Shipping';
 import Dashboard from './page/Dashboard/Dashboard';
 import ShowDashboard from './page/Dashboard/ShowDashboard';
+import PageNotfound from './page/404/PageNotfound';
 function App() {
   return (
     <div className="App">
@@ -44,6 +45,9 @@ function App() {
     <PrivateRoute path="/dashboard">
     <ShowDashboard></ShowDashboard>
     </PrivateRoute>
+    <Route>
+    <PageNotfound></PageNotfound>
+    </Route>
     </Switch>
     <Footer></Footer>
     </BrowserRouter>
