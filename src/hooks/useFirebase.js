@@ -8,29 +8,29 @@ const useFirebase = () => {
     const [name, setName]=useState('')   // user name 
     const [password,setPassword]=useState('')   // set user password
     const [email, setEmail] = useState('')   // set user email
+    const [isLoading, setIsLoading] = useState(true);
     const Googleprovider = new GoogleAuthProvider();
     const auth = getAuth();
     const sininWithgoogle = () =>{
-          signInWithPopup(auth, Googleprovider)
-          .then(result =>{
-              setUser(result.user)
-          })
-          .catch(error => {
-           setError(error)
-          })
+             setIsLoading(true)
+           return  signInWithPopup(auth, Googleprovider)
+           .finally(() => setIsLoading(false));
       }
        // log out user
     const Logout = ()=>{
+      setIsLoading(true)
           signOut(auth)
           .then(()=>{
               setUser({})
           })
+          .finally(()=> setIsLoading(false))
       }
       useEffect(()=>{
           onAuthStateChanged(auth, user =>{
               if (user) {
                   setUser(user)
                 } 
+                setIsLoading(false)
           })
       },[])
       // set email password
@@ -107,7 +107,8 @@ const useFirebase = () => {
         handlechangeName,
         handlePassword,
         error,
-        HandleSingin
+        HandleSingin,
+        isLoading
     };
 };
 

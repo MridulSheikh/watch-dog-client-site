@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 const ExploreCard = (props) => {
-    const {name,Style,body_type,Dial_Color,Case_Shape,Clasp_Type,Display_Methods,price,img} = props.product
+    const {name,Style,body_type,Dial_Color,_id,Display_Methods,price,img} = props.product
     return (
         <Col>
       <Card>
@@ -16,7 +17,9 @@ const ExploreCard = (props) => {
           <Card.Text>
            {name}
           </Card.Text>
+          <Link to = {`/details/${_id}`}>
           <button style={{backgroundColor: "#D80178", border:"none", padding:"7px",width:"100%",color:"#fff",borderRadius:"5px"}}>Details</button>
+          </Link>
         </Card.Body>
       </Card>
     </Col>

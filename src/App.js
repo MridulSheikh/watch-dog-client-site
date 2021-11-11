@@ -8,9 +8,12 @@ import Explore from './page/explore/Explore';
 import Login from './page/Athuntication/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import Registration from './page/Athuntication/Regitration/Registration';
+import ProductDetails from './page/product details/ProductDetails';
+import PrivateRoute from './components/Private route/PrivateRoute';
+import Shipping from './components/procced to shipping/Shipping';
 function App() {
   return (
-    <>
+    <div className="App">
     <AuthProvider>
     <BrowserRouter>
     <Navigation />
@@ -30,11 +33,17 @@ function App() {
     <Route path="/registration">
     <Registration></Registration>
     </Route>
+    <Route exact path="/shipping/:ProductId">
+    <Shipping></Shipping>
+    </Route>
+    <PrivateRoute path="/details/:ProductId">
+    <ProductDetails></ProductDetails>
+    </PrivateRoute>
     </Switch>
     <Footer></Footer>
     </BrowserRouter>
     </AuthProvider>
-   </>
+   </div>
   );
 }
 

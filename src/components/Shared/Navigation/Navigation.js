@@ -26,16 +26,18 @@ const Navigation = () => {
             <button  style={{border:"2px solid #64D801" , backgroundColor:"#64D80100", padding:"5px 10px", borderRadius:"30px",color:"#fff"}} className="reg-b-t-n">Dashboard</button>
             </Nav.Link>
           }
-          <div className="d-flex justify-content-center aling-items-center mx-3 mt-1">
+          <div className="d-flex justify-content-center aling-items-center my-1 mx-3">
           {
             user.photoURL ? <Link to="/manageAccount"> <img src={user.photoURL} alt="" width='45px' height="45px" style={{borderRadius:"50%"}} /></Link> : user.email && <Link  to="/manageAccount"> <i className="fas fa-user-circle fs-1 unperson text-danger" style={{borderRadius:"50%"}}></i> </Link>
           }
           </div>
+          <div className="text-center">
           {
-            user.email ? <button onClick={Logout}  style={{border:"none", backgroundColor:"#D80178", padding:"0px 20px", borderRadius:"30px",color:"#fff"}}>singout</button> :  <Nav.Link as={NavLink} to="/login">
+            user.email ? <button onClick={Logout}  style={{border:"none", backgroundColor:"#D80178",width:"90px", padding:"7px 20px", borderRadius:"30px",color:"#fff"}} className="mt-2">singout</button> :  <Nav.Link as={NavLink} to="/login">
             <button  style={{border:"none", backgroundColor:"#D80178", padding:"7px 20px", borderRadius:"30px",color:"#fff"}}>login</button>
             </Nav.Link>
           }
+          </div>
           </Nav>
         </Navbar.Collapse>
         </Container>
