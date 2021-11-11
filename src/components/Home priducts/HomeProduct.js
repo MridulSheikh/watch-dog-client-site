@@ -16,6 +16,7 @@ const HomeProduct = () => {
         <Row xs={1} md={3} className="g-4 mt-5">
         {
             sliceProduct.map(pro => <ProductCard
+                key ={pro._id}
                 product={pro}
                 ></ProductCard>)
         }

@@ -18,6 +18,7 @@ const Explore = () => {
         <Row xs={1} md={3} className="g-4">
         {
             product.map(pro => <ExploreCard
+                key = {pro._id}
                 product = {pro}
                 ></ExploreCard>)
         }

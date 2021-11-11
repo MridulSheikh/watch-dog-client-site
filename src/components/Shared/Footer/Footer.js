@@ -10,9 +10,9 @@ const Footer = () => {
         <Row>
         <Col sm={1} md={6}>
           <h3 className="text-light">WATCH DOG</h3>
-          <h5 className="text-light mt-3"><i class="fas fa-map-marker-alt text-light me-2"></i>Bangladesh,  Dhaka, multiplan center</h5>
-          <h5 className="text-light mt-1"><i class="far fa-envelope text-light me-2"></i> Officilal site : Prince9nazir@gmail.com</h5>
-          <h5  className="text-light mt-1"><i class="fas fa-phone-alt text-light me-2"></i> +0881883992408</h5>
+          <h5 className="text-light mt-3"><i className="fas fa-map-marker-alt text-light me-2"></i>Bangladesh,  Dhaka, multiplan center</h5>
+          <h5 className="text-light mt-1"><i className="far fa-envelope text-light me-2"></i> Officilal site : Prince9nazir@gmail.com</h5>
+          <h5  className="text-light mt-1"><i className="fas fa-phone-alt text-light me-2"></i> +0881883992408</h5>
           <img src={googlePlay} alt="" width="150px" />
         </Col>
         <Col sm={1} md={6}>

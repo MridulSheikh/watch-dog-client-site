@@ -5,7 +5,7 @@ const ExploreCard = (props) => {
     return (
         <Col>
       <Card>
-        <Card.Img variant="top" src={img} />
+        <Card.Img variant="top" src={img} height="300px"/>
         <Card.Body>
           <Card.Title style={{color:"#D80178"}}> <h3>$ {price} USD</h3></Card.Title>
           <Card.Text>
