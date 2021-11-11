@@ -40,7 +40,7 @@ const Shipping = () => {
         </Col>
         <Col sm={1} md={4} style={{backgroundColor:"#fff"}} className="mt-5 pt-md-3">
         <form onSubmit={handleSubmit(onSubmit)}>
-            <input  onBlur={onblur} defaultValue={product._id} style={{outline:"none", borderBottom:"2px solid #D80178", borderTop:"0px", borderLeft:"0px",borderRight:"0px"}} {...register("brand_id")} placeholder="please copy past brand Id" className='d-block w-100 mt-3 fs-5 p-2' required  />
+            <input disabled onBlur={onblur} defaultValue={product._id} style={{outline:"none", borderBottom:"2px solid #D80178", borderTop:"0px", borderLeft:"0px",borderRight:"0px"}} {...register("brand_id")} placeholder="please copy past brand Id" className='d-block w-100 mt-3 fs-5 p-2' required  />
             <input onBlur={onblur} defaultValue={user.displayName} style={{outline:"none", borderBottom:"2px solid #D80178", borderTop:"0px", borderLeft:"0px",borderRight:"0px"}} {...register("Name", { required: true, maxLength: 60 })} placeholder="name" className='d-block w-100 mt-3 fs-5 p-2' required  />
             <input onBlur={onblur} defaultValue={user.email}  style={{outline:"none", borderBottom:"2px solid #D80178", borderTop:"0px", borderLeft:"0px",borderRight:"0px"}} {...register("email", { required: true, maxLength: 60 })} placeholder="your email" className='d-block w-100 mt-3 fs-5 p-2' required  />
             <input onBlur={onblur}   style={{outline:"none", borderBottom:"2px solid #D80178", borderTop:"0px", borderLeft:"0px",borderRight:"0px"}}{...register("phone", { required: true})} placeholder="phone number" className='d-block w-100 mt-3 fs-5 p-2' required  />
