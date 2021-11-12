@@ -14,15 +14,18 @@ const MyOrder = () => {
     },[orders])
     const filteremail = orders.filter(or => or.email === user.email)
     const cancelOrder = id =>{
-        fetch(`http://localhost:5000/orders/${id}`,{
-          method : "DELETE"
-        })
-        .then(res => res.json())
-        .then(data => {
-             console.log(data)
-            const reamaining = orders.filter(order => order._id !== id);
-            setOrders(reamaining)
-        })
+        const proced = window.confirm("Are you sure cancel this order")
+        if(proced){
+            fetch(`http://localhost:5000/orders/${id}`,{
+                method : "DELETE"
+              })
+              .then(res => res.json())
+              .then(data => {
+                   console.log(data)
+                  const reamaining = orders.filter(order => order._id !== id);
+                  setOrders(reamaining)
+              })
+        }
       }
     return (
         <Container>

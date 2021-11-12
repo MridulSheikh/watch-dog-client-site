@@ -27,7 +27,6 @@ const Revew = () => {
         })
         .then()
     }
-    console.log(ratting)
     return (
         <>
         <Container>

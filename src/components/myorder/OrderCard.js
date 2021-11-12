@@ -21,7 +21,7 @@ const OrderCard = (props) =>{
                     <Card.Title>{fl.name}</Card.Title>
                     <Card.Text>
                     {
-                      props.order.status ? <p><span className="text-success my-3">on waya....<i className="fas fa-biking"></i></span></p> : <p><span className="text-warning my-3">panding....</span></p>
+                      props.order.status ? <p><span className="text-success my-3">on away....<i className="fas fa-biking"></i></span></p> : <p><span className="text-warning my-3">panding....</span></p>
                     }
                       <Button onClick={() => props.cancelOrder(_id)} variant="danger" className="w-100 py-7">cancel order</Button>
                     </Card.Text>

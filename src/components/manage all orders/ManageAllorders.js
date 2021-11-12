@@ -20,6 +20,7 @@ const ManageAllorders = () => {
             setOrder(reamaining)
         })
       }
+      
     return (
         <div>
         <Table striped bordered hover variant="danger">
