@@ -1,10 +1,21 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link,  useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Registration = () => {
     const {EmailChange,  handlePassword,  sininWithgoogle,HandleReg,error,  handlechangeName}=useAuth()
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home';
+
+    
+    const handleGoogleLogin = () => {
+        sininWithgoogle()
+        .then(result => {
+            history.push(redirect_uri);
+        })
+}
     return (
         <div style={{height:"70vh",display:"flex", justifyContent:"center",alignItems:"center"}} >
         <Container>
@@ -25,7 +36,7 @@ const Registration = () => {
         <button className="d-block w-100 py-1 mt-2 border-0 bg-primary text-light rounded" style={{background: "linear-gradient(329deg, rgba(147,0,147,1) 0%, rgba(147,0,139,0.5858718487394958) 33%)"}}>registration now</button>
         <h5 className="text-center my-2">or</h5>
         </form>
-        <button className="d-block w-100 py-1 mt-2 border-0 bg-primary text-light rounded" onClick={sininWithgoogle}><i className="fab fa-google-plus-g me-2"></i>continue with google</button>
+        <button className="d-block w-100 py-1 mt-2 border-0 bg-primary text-light rounded" onClick={handleGoogleLogin}><i className="fab fa-google-plus-g me-2"></i>continue with google</button>
         <p>Allready have an account? <Link to="/login">sing in</Link> </p>
         </Col>
        </Row>

@@ -5,7 +5,7 @@ import { Link,  useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
-    const {sininWithgoogle, EmailChange,  handlePassword, HandleSingin,error} = useAuth();
+    const {sininWithgoogle, EmailChange,  handlePassword, HandleSingin,error,saveUser} = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home';
@@ -14,6 +14,8 @@ const Login = () => {
     const handleGoogleLogin = () => {
         sininWithgoogle()
         .then(result => {
+            const user = result.user
+            saveUser(user.email , user.displayName, "PUT")
             history.push(redirect_uri);
         })
 }

@@ -5,6 +5,7 @@ import Banner from '../../components/banner/Banner';
 import "./Home.css";
 import watch from '../../utilities/img/wtch.jpg'
 import HomeProduct from '../../components/Home priducts/HomeProduct';
+import HomeRevew from '../../components/homeRebew/HomeRevew';
 const Home = () => {
     return (
         <>
@@ -26,6 +27,7 @@ const Home = () => {
       </Row>
         </Container>
         <HomeProduct></HomeProduct>
+        <HomeRevew></HomeRevew>
    </>
     );
 };

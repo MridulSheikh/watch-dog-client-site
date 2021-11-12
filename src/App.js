@@ -11,7 +11,6 @@ import Registration from './page/Athuntication/Regitration/Registration';
 import ProductDetails from './page/product details/ProductDetails';
 import PrivateRoute from './components/Private route/PrivateRoute';
 import Shipping from './components/procced to shipping/Shipping';
-import Dashboard from './page/Dashboard/Dashboard';
 import ShowDashboard from './page/Dashboard/ShowDashboard';
 import PageNotfound from './page/404/PageNotfound';
 function App() {

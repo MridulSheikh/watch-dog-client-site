@@ -54,6 +54,7 @@ const useFirebase = () => {
           console.log(user)
           setError('')
           setuserName();
+          saveUser(user.email, name, "POST")
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -98,6 +99,18 @@ const useFirebase = () => {
             } 
           });
     },[])
+    //user information save to database
+       const saveUser = (email,name,method) =>{
+          const user = {email, displayName: name}
+          fetch('http://localhost:5000/users',{
+            method: method, 
+            headers: {
+              'content-type' : 'application/json'
+            },
+            body : JSON.stringify(user)
+          })
+          .then()
+       }
     return {
         sininWithgoogle,
         user,
@@ -108,7 +121,8 @@ const useFirebase = () => {
         handlePassword,
         error,
         HandleSingin,
-        isLoading
+        isLoading,
+        saveUser
     };
 };
 
