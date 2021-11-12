@@ -8,6 +8,8 @@ import {
     useParams,
     useRouteMatch
   } from "react-router-dom";
+import AddProduct from '../../components/addProduct/AddProduct';
+import ManageAllorders from '../../components/manage all orders/ManageAllorders';
 import MyOrder from '../../components/myorder/MyOrder';
 import Pay from '../../components/pay/Pay';
 import Revew from '../../components/Revew/Revew';
@@ -28,6 +30,8 @@ const ShowDashboard = () => {
               <Nav.Link className="ms-md-3 fs-5" as={Link} to={`${url}/pay`}>pay</Nav.Link>
               <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/myorder`}>my order</Nav.Link>
               <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/revew`}>revew</Nav.Link>
+              <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/manageOrder`}>manage all orders</Nav.Link>
+              <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/addproduct`}>Add products</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -45,6 +49,12 @@ const ShowDashboard = () => {
         </Route>
         <Route path={`${path}/revew`}>
         <Revew></Revew>
+        </Route>
+        <Route path={`${path}/manageOrder`}>
+        <ManageAllorders></ManageAllorders>
+        </Route>
+        <Route path={`${path}/addproduct`}>
+       <AddProduct></AddProduct>
         </Route>
         </Switch>
         </div>
