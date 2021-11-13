@@ -21,9 +21,8 @@ const MyOrder = () => {
               })
               .then(res => res.json())
               .then(data => {
-                   console.log(data)
-                  const reamaining = orders.filter(order => order._id !== id);
-                  setOrders(reamaining)
+                   const reamaining = orders.filter(order => order._id !== id);
+                   setOrders(reamaining)
               })
         }
       }

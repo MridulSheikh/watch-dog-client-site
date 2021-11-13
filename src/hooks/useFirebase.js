@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [password,setPassword]=useState('')   // set user password
     const [email, setEmail] = useState('')   // set user email
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
     const Googleprovider = new GoogleAuthProvider();
     const auth = getAuth();
     const sininWithgoogle = () =>{
@@ -33,6 +34,11 @@ const useFirebase = () => {
                 setIsLoading(false)
           })
       },[])
+      useEffect(()=>{
+        fetch(`http://localhost:5000/users/${user.email}`)
+        .then(res => res.json())
+        .then(data => setAdmin(data.Admin))
+      },[user.email])
       // set email password
     const EmailChange = e =>{
         setEmail(e.target.value)
@@ -122,7 +128,8 @@ const useFirebase = () => {
         error,
         HandleSingin,
         isLoading,
-        saveUser
+        saveUser,
+        admin
     };
 };
 

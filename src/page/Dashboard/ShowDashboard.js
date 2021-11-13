@@ -9,18 +9,23 @@ import {
     useRouteMatch
   } from "react-router-dom";
 import AddProduct from '../../components/addProduct/AddProduct';
+import AdminRoute from '../../components/adminroute/AdminRoute';
 import MakeAdmin from '../../components/make admin/MakeAdmin';
 import ManageAllorders from '../../components/manage all orders/ManageAllorders';
 import MyOrder from '../../components/myorder/MyOrder';
 import Pay from '../../components/pay/Pay';
 import Revew from '../../components/Revew/Revew';
+import ManageProduct from '../../components/UpdateProduct/ManageProduct';
+import UpdateProduct from '../../components/UpdateProduct/updateProduct/UpdateProduct';
+import useAuth from '../../hooks/useAuth';
 const ShowDashboard = () => {
     let { path, url } = useRouteMatch();
+    const {admin} = useAuth()
     return (
         <div>
         <Navbar variant="dark"  expand="lg" style={{backgroundColor:"#AF00A8"}} sticky="top">
         <Container>
-          <Navbar.Brand href="#home" className="fs-1">
+          <Navbar.Brand href="#home" className="fs-5">
           <Link to={`${url}`} style={{textDecoration:"none", color:"#fff"}}>
           <i className="fas fa-tachometer-alt"></i> Dashboard
           </Link>
@@ -31,10 +36,20 @@ const ShowDashboard = () => {
               <Nav.Link className="ms-md-3 fs-5" as={Link} to={`${url}/pay`}>pay</Nav.Link>
               <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/myorder`}>my order</Nav.Link>
               <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/revew`}>revew</Nav.Link>
-              <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/manageOrder`}>manage all orders</Nav.Link>
-              <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/addproduct`}>Add products</Nav.Link>
-              <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/makeadmin`}>Make Admin</Nav.Link>
-            </Nav>
+              {
+                admin &&    <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/manageOrder`}>manage all orders</Nav.Link>
+              }
+              {
+                admin &&     <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/addproduct`}>Add products</Nav.Link>
+              }
+              {
+                admin &&      <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/makeadmin`}>Make Admin</Nav.Link>
+              }
+              {
+                admin &&       <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/updateProduct`}>manage product</Nav.Link>
+              }
+             
+           </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -52,15 +67,21 @@ const ShowDashboard = () => {
         <Route path={`${path}/revew`}>
         <Revew></Revew>
         </Route>
-        <Route path={`${path}/manageOrder`}>
+        <AdminRoute path={`${path}/manageOrder`}>
         <ManageAllorders></ManageAllorders>
-        </Route>
-        <Route path={`${path}/addproduct`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/addproduct`}>
        <AddProduct></AddProduct>
-        </Route>
-        <Route path={`${path}/makeadmin`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/makeadmin`}>
         <MakeAdmin></MakeAdmin>
-        </Route>
+        </AdminRoute>
+        <AdminRoute path={`${path}/updateProduct`}>
+       <ManageProduct></ManageProduct>
+        </AdminRoute>
+        <AdminRoute path={`${path}/updateOne/:id`}>
+       <UpdateProduct></UpdateProduct>
+        </AdminRoute>
         </Switch>
         </div>
         </div>

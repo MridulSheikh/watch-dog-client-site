@@ -91,6 +91,7 @@ const AddProduct = () => {
         <label for="exampleFormControlInput1" className="form-label"> color :</label>
         <input onBlur={handlecolor} type="text" className="form-control mb-3" id="exampleFormControlInput1" required  />
         <label for="exampleFormControlInput1" className="form-label"> image url :</label>
+        <img src={img} width="100%" style={{display:"block", marginBottom:"20px"}} />
         <input onBlur={handleimg} type="text" className="form-control mb-3" id="exampleFormControlInput1" required  />
         <button style={{width:"100%", border:"none", color:"#fff", backgroundColor:"#AF00A8", padding:"5px 0px", borderRadius:"5px"}}>Add product</button>
         </form>
