@@ -23,7 +23,7 @@ const ShowDashboard = () => {
     const {admin} = useAuth()
     return (
         <div>
-        <Navbar variant="dark"  expand="lg" style={{backgroundColor:"#AF00A8"}} sticky="top">
+        <Navbar variant="dark"  expand="lg" style={{backgroundColor:"#AF00A8"}} className='py-3' sticky="top">
         <Container>
           <Navbar.Brand href="#home" className="fs-5">
           <Link to={`${url}`} style={{textDecoration:"none", color:"#fff"}}>

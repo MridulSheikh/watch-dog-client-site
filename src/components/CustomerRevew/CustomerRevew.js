@@ -5,7 +5,7 @@ import CustomerRevewcard from './CustomerRevewcard';
 const CustomerRevew = () => {
     const [revews, setRevews] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/revew')
+        fetch('https://morning-harbor-52337.herokuapp.com/revew')
         .then(res => res.json())
         .then(data => setRevews(data))
     },[])

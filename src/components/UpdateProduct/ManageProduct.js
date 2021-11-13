@@ -5,7 +5,7 @@ import ManageProductCard from './ManageProductCard';
 const ManageProduct = () => {
     const [product  , setProuduct] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/product')
+        fetch('https://morning-harbor-52337.herokuapp.com/product')
         .then(res => res.json())
         .then(data => setProuduct(data))
     },[product])
@@ -13,7 +13,7 @@ const ManageProduct = () => {
         const proced = window.confirm("Are you sure to DELETE this product")
         console.log(id)
         if(proced){
-            fetch(`http://localhost:5000/product/${id}`,{
+            fetch(`https://morning-harbor-52337.herokuapp.com/product/${id}`,{
                 method: 'DELETE',
               })
               .then(res => res.json())

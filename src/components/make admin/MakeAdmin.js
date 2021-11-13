@@ -6,7 +6,7 @@ const MakeAdmin = () => {
     const [user, setUser] = useState([])
     const [search , setSearch] = useState('')
     useEffect(()=>{
-        fetch('http://localhost:5000/user')
+        fetch('https://morning-harbor-52337.herokuapp.com/user')
         .then(res => res.json())
         .then(data => setUser(data))
     },[user])

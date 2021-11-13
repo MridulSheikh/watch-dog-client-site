@@ -35,7 +35,7 @@ const useFirebase = () => {
           })
       },[])
       useEffect(()=>{
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://morning-harbor-52337.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.Admin))
       },[user.email])
@@ -108,7 +108,7 @@ const useFirebase = () => {
     //user information save to database
        const saveUser = (email,name,method) =>{
           const user = {email, displayName: name}
-          fetch('http://localhost:5000/users',{
+          fetch('https://morning-harbor-52337.herokuapp.com/users',{
             method: method, 
             headers: {
               'content-type' : 'application/json'

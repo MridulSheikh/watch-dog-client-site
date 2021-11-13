@@ -10,14 +10,14 @@ const Shipping = () => {
     const {user} = useAuth()
     const {ProductId} = useParams()
     useEffect(()=>{
-        fetch(`http://localhost:5000/product/${ProductId}`)
+        fetch(`https://morning-harbor-52337.herokuapp.com/product/${ProductId}`)
         .then(res => res.json())
         .then(data => setProduct(data))
     },[])
      //form
      const { register, handleSubmit, reset, onblur} = useForm();
      const onSubmit = data =>{
-        axios.post("http://localhost:5000/Orders",data)
+        axios.post("https://morning-harbor-52337.herokuapp.com/Orders",data)
         .then(res =>{
           if(res.data.insertedId){
            alert("you order has been added")

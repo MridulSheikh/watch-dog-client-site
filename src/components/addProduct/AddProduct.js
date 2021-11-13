@@ -56,7 +56,7 @@ const AddProduct = () => {
             price : price,
             img : img
         }
-        fetch('http://localhost:5000/product',{
+        fetch('https://morning-harbor-52337.herokuapp.com/product',{
             method : "POST",
             headers : {
                 'content-type' : 'application/json'

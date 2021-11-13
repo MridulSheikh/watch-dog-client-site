@@ -17,7 +17,7 @@ const UpdateProduct = () => {
     const [uprice , setUprice] =useState();
     const [photo , setPhoto] =useState('');
     useEffect(()=>{
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://morning-harbor-52337.herokuapp.com/product/${id}`)
         .then(res => res.json())
         .then(data => setProduct(data))
     },[])
@@ -57,11 +57,12 @@ const UpdateProduct = () => {
     return (
         <Container className="d-flex justify-content-center aling-items-center mt-5">
            <div className="w-50">
+           <img src="https://jcua.org/wp-content/uploads/2016/10/page_under_construction.jpg" width="100%" />
            <h1 className="text center mb-5">update your product</h1>
            <div className="my-3">
     <form onSubmit={handleUpdateProduct}>
          <label for="exampleFormControlInput1" className="form-label"> image url :</label> 
-        <img src={photo} width="100%" height="300px" style={{display:"block", marginBottom:"20px"}} />
+        <img src={img} width="100%" height="300px" style={{display:"block", marginBottom:"20px"}} />
         <input defaultValue={img} onBlur={handleimg} type="text" className="form-control mb-3" id="exampleFormControlInput1" required  />
         <label for="exampleFormControlInput1" className="form-label">Product Name :</label>
         <input defaultValue={name} onBlur={handlename} type="text" className="form-control mb-3" id="exampleFormControlInput1" placeholder="Enter product name" required />

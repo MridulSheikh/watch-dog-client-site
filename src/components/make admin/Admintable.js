@@ -5,7 +5,7 @@ const Admintable = (props) => {
     const {email, displayName} = props.user
     const handleUser = () =>{
         const user = {email}
-        fetch('http://localhost:5000/user/admin',{
+        fetch('https://morning-harbor-52337.herokuapp.com/user/admin',{
             method:"PUT",
             headers : {
                 'content-type' : 'application/json'

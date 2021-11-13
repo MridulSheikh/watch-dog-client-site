@@ -8,7 +8,7 @@ const MyOrder = () => {
     const {user} = useAuth()
     const [orders, setOrders]=useState([]);
     useEffect(()=>{
-        fetch("http://localhost:5000/orders")
+        fetch("https://morning-harbor-52337.herokuapp.com/orders")
         .then(res => res.json())
         .then(data => setOrders(data))
     },[orders])
@@ -16,7 +16,7 @@ const MyOrder = () => {
     const cancelOrder = id =>{
         const proced = window.confirm("Are you sure cancel this order")
         if(proced){
-            fetch(`http://localhost:5000/orders/${id}`,{
+            fetch(`https://morning-harbor-52337.herokuapp.com/orders/${id}`,{
                 method : "DELETE"
               })
               .then(res => res.json())

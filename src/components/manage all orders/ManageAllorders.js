@@ -5,12 +5,12 @@ import ManageCard from './ManageCard';
 const ManageAllorders = () => {
     const [order, setOrder] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/orders')
+        fetch('https://morning-harbor-52337.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrder(data))
     },[order])
     const deleteOrder = id =>{
-        fetch(`http://localhost:5000/orders/${id}`,{
+        fetch(`https://morning-harbor-52337.herokuapp.com/orders/${id}`,{
           method : "DELETE"
         })
         .then(res => res.json())

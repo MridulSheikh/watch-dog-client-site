@@ -4,7 +4,7 @@ const ManageCard = (props) => {
     const {brand_id, Name, email,phone,address,_id} = props.order
     const hadleShipping = () =>{
         const orders = {_id}
-        fetch('http://localhost:5000/orders',{
+        fetch('https://morning-harbor-52337.herokuapp.com/orders',{
             method:"PUT",
             headers : {
                   "content-type" : "application/json"

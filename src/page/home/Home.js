@@ -6,6 +6,7 @@ import "./Home.css";
 import watch from '../../utilities/img/wtch.jpg'
 import HomeProduct from '../../components/Home priducts/HomeProduct';
 import HomeRevew from '../../components/homeRebew/HomeRevew';
+import About from '../../components/about/About';
 const Home = () => {
     return (
         <>
@@ -28,6 +29,7 @@ const Home = () => {
         </Container>
         <HomeProduct></HomeProduct>
         <HomeRevew></HomeRevew>
+        <About></About>
    </>
     );
 };

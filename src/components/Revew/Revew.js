@@ -18,7 +18,7 @@ const Revew = () => {
             comment : text,
             ratting: ratting
         }
-        fetch('http://localhost:5000/revew',{
+        fetch('https://morning-harbor-52337.herokuapp.com/revew',{
             method : "POST",
             headers:{
                 'content-type' : 'application/json'
