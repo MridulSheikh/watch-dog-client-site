@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import CustomerRevew from '../CustomerRevew/CustomerRevew';
 
@@ -7,10 +7,12 @@ const Revew = () => {
     const {user}=useAuth()
     const [text , setText] = useState('')
     const [ratting, setRatting] = useState()
+    const [isloading, setIsloading] = useState(false)
     const handleText = e =>{
        setText(e.target.value)
     }
-    const submitRevew = () =>{
+    const submitRevew = e =>{
+        setIsloading(true)
         const revew = {
             name : user.displayName,
             email : user.email,
@@ -26,6 +28,13 @@ const Revew = () => {
             body : JSON.stringify(revew)
         })
         .then()
+        .finally(()=> setIsloading(false))
+        e.preventDefault();
+    }
+    if(isloading){
+        return <div style={{display:'flex',justifyContent:"center", alignItems:"center", height:"80vh"}}>
+        <Spinner animation="border" className="m-5" />
+        </div>
     }
     return (
         <>

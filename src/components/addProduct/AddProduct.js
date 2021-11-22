@@ -1,6 +1,6 @@
-import { padding } from '@mui/system';
+
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 
 const AddProduct = () => {
     const [name , setName] =useState('');
@@ -13,6 +13,7 @@ const AddProduct = () => {
     const [warenty , setWarenty] =useState('');
     const [price , setPrice] =useState();
     const [img , setImg] =useState('');
+    const [isloading, setIsloading] = useState(false)
     const handlename = e =>{
         setName(e.target.value)
     }
@@ -43,7 +44,9 @@ const AddProduct = () => {
     const handlecolor = e =>{
         setColor(e.target.value)
     }
-    const handleaddProduct = () =>{
+    const handleaddProduct = e =>{
+        e.preventDefault()
+        setIsloading(true)
         const product = {
             name : name,
             Style :style,
@@ -64,6 +67,11 @@ const AddProduct = () => {
             body : JSON.stringify(product)
         })
         .then()
+        .finally(()=> setIsloading(false))
+        e.preventDefault()
+    }
+    if(isloading){
+        return  <Spinner animation="border" style={{margin:"20%"}} />
     
     }
     return (

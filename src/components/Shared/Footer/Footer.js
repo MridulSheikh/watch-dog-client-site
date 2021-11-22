@@ -17,7 +17,7 @@ const Footer = () => {
         </Col>
         <Col sm={1} md={6}>
        <h3 className="text-light">Pay With</h3>
-       <img src="https://designdrizzle.com/wp-content/uploads/14.-free-payment-method-gateway-icon-sets-13.png" alt="" width="390px" className="rounded" />
+       <img src="https://designdrizzle.com/wp-content/uploads/14.-free-payment-method-gateway-icon-sets-13.png" alt="" width="100%" className="rounded" />
         </Col>
       </Row>
         </Container>

@@ -8,7 +8,7 @@ const CustomerRevew = () => {
         fetch('https://morning-harbor-52337.herokuapp.com/revew')
         .then(res => res.json())
         .then(data => setRevews(data))
-    },[])
+    },[revews])
     return (
         <Container>
         <Row xs={1} md={3} className="g-4 mt-5">
