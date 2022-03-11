@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Shared/Footer/Footer';
+import Navigation from '../../components/Shared/Navigation/Navigation';
 
 const ProductDetails = () => {
     const { ProductId } = useParams();
+    console.log(useParams)
     const [product, setProduct]=useState([]);
     useEffect(()=>{
         fetch(`https://morning-harbor-52337.herokuapp.com/product/${ProductId}`)
@@ -12,6 +15,8 @@ const ProductDetails = () => {
         .then(data => setProduct(data))
     },[])
     return ( 
+        <>
+        <Navigation />
         <Container className="mt-md-5">
         <Row>
         <Col sm={1} md={6} className="d-flex aling-items-center">
@@ -33,6 +38,8 @@ const ProductDetails = () => {
         </Col>
         </Row>
         </Container>
+        <Footer />
+        </>
     );
 };
 

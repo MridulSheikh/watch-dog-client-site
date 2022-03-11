@@ -18,7 +18,6 @@ function App() {
     <div className="App">
     <AuthProvider>
     <BrowserRouter>
-    <Navigation />
     <Switch>
     <Route exact path="/">
       <Home></Home>
@@ -48,7 +47,6 @@ function App() {
     <PageNotfound></PageNotfound>
     </Route>
     </Switch>
-    <Footer></Footer>
     </BrowserRouter>
     </AuthProvider>
    </div>

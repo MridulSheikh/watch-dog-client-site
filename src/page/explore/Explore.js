@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import ExploreCard from '../../components/explore card/ExploreCard';
+import Footer from '../../components/Shared/Footer/Footer';
+import Navigation from '../../components/Shared/Navigation/Navigation';
 import "./Explore.css"
 const Explore = () => {
     const [product, setProduct]=useState([])
@@ -10,6 +12,8 @@ const Explore = () => {
         .then(data => setProduct(data))
     },[])
     return (
+        <>
+        <Navigation />
         <div className="mt-3">
         <Container className="exploreBanner">
           <h1 className="text-warning">There are <span style={{color:"#D80178"}}>{product.length} </span> type of <br/> Watches avalable in  <br/> our website</h1>
@@ -25,6 +29,8 @@ const Explore = () => {
         </Row>
         </Container>
      </div>
+     <Footer />
+     </>
     );
 };
 

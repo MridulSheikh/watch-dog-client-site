@@ -25,14 +25,10 @@ const ShowDashboard = () => {
         <div>
         <Navbar variant="dark"  expand="lg" style={{backgroundColor:"#AF00A8"}} className='py-3' sticky="top">
         <Container>
-          <Navbar.Brand href="#home" className="fs-5">
-          <Link to={`${url}`} style={{textDecoration:"none", color:"#fff"}}>
-          <i className="fas fa-tachometer-alt"></i> Dashboard
-          </Link>
-          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto text-light ms-md-5">
+              <Nav.Link className="ms-md-3 fs-5" as={Link} to="/">Home</Nav.Link>
               <Nav.Link className="ms-md-3 fs-5" as={Link} to={`${url}/pay`}>pay</Nav.Link>
               <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/myorder`}>my order</Nav.Link>
               <Nav.Link className="ms-md-3  fs-5" as={Link} to={`${url}/revew`}>revew</Nav.Link>

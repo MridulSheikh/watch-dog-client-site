@@ -98,7 +98,7 @@ const useFirebase = () => {
         });
       }
         //obserb wether user auth state changed or not
-     useEffect(()=>{
+        useEffect(()=>{
         onAuthStateChanged(auth, (user) => {
             if (user) {
               setUser(user)

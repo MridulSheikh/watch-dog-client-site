@@ -7,9 +7,12 @@ import watch from '../../utilities/img/wtch.jpg'
 import HomeProduct from '../../components/Home priducts/HomeProduct';
 import HomeRevew from '../../components/homeRebew/HomeRevew';
 import About from '../../components/about/About';
+import Navigation from '../../components/Shared/Navigation/Navigation';
+import Footer from '../../components/Shared/Footer/Footer';
 const Home = () => {
     return (
         <>
+        <Navigation />
         <Container className="mt-md-5">
         <Row>
         <Col md={6} sm={12}>
@@ -30,6 +33,7 @@ const Home = () => {
         <HomeProduct></HomeProduct>
         <HomeRevew></HomeRevew>
         <About></About>
+        <Footer />
    </>
     );
 };
